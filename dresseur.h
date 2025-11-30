@@ -26,4 +26,6 @@ public:
     void ajouterPokemon();
 };
 
+//test de commentaire
+
 #endif // DRESSEUR_H
