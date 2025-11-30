@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1440</width>
+    <height>810</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1440</width>
+    <height>810</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="minimumSize">
+       <size>
+        <width>150</width>
+        <height>150</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#page_equipe {
+    background-color: #2c3e50;
+}</string>
+      </property>
+      <widget class="QWidget" name="page_combat">
+       <property name="styleSheet">
+        <string notr="true">#page_combat {
+    border-image: url(:/assets/arene2.png) 0 0 0 0 stretch stretch;
+}</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>200</number>
+            </property>
+            <property name="rightMargin">
+             <number>500</number>
+            </property>
+            <item alignment="Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignVCenter">
+             <widget class="QProgressBar" name="HPEnnemi">
+              <property name="maximumSize">
+               <size>
+                <width>118</width>
+                <height>23</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">/* 1. L'apparence générale de la barre (le conteneur) */
+QProgressBar {
+    border: 3px solid #333333;   /* Bordure épaisse et très sombre */
+    border-radius: 0px;          /* Coins carrés, pas d'arrondi */
+    background-color: #555555;   /* Fond gris foncé (quand la vie est vide) */
+    text-align: center;          /* Texte au milieu */
+    color: white;                /* Texte blanc pour le contraste */
+    font-weight: bold;
+}
+
+/* 2. L'apparence de la partie remplie (la vie) */
+QProgressBar::chunk {
+    background-color: #32CD32;   /* Un beau vert &quot;Lime Green&quot; */
+    /* On a supprimé 'width' et 'margin' pour avoir une barre continue */
+}</string>
+              </property>
+              <property name="value">
+               <number>50</number>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+              <property name="format">
+               <string>%v/%m</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="PokemonEnnemi">
+              <property name="minimumSize">
+               <size>
+                <width>251</width>
+                <height>251</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>251</width>
+                <height>251</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="ressources.qrc">:/assets/salameche_f.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>130</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>300</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="PokemonJoueur">
+              <property name="minimumSize">
+               <size>
+                <width>251</width>
+                <height>251</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>251</width>
+                <height>251</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="ressources.qrc">:/assets/bulbizarre_d.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item alignment="Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter">
+             <widget class="QProgressBar" name="HPJoueur">
+              <property name="maximumSize">
+               <size>
+                <width>118</width>
+                <height>23</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">/* 1. L'apparence générale de la barre (le conteneur) */
+QProgressBar {
+    border: 3px solid #333333;   /* Bordure épaisse et très sombre */
+    border-radius: 0px;          /* Coins carrés, pas d'arrondi */
+    background-color: #555555;   /* Fond gris foncé (quand la vie est vide) */
+    text-align: center;          /* Texte au milieu */
+    color: white;                /* Texte blanc pour le contraste */
+    font-weight: bold;
+}
+
+/* 2. L'apparence de la partie remplie (la vie) */
+QProgressBar::chunk {
+    background-color: #32CD32;   /* Un beau vert &quot;Lime Green&quot; */
+    /* On a supprimé 'width' et 'margin' pour avoir une barre continue */
+}</string>
+              </property>
+              <property name="value">
+               <number>50</number>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignHCenter</set>
+              </property>
+              <property name="textVisible">
+               <bool>true</bool>
+              </property>
+              <property name="format">
+               <string>%v/%m</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,2,1">
+          <property name="sizeConstraint">
+           <enum>QLayout::SizeConstraint::SetNoConstraint</enum>
+          </property>
+          <item>
+           <widget class="QLabel" name="labelTexte">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel {
+    background-color: white;      /* Fond blanc */
+    border: 4px solid #333333;    /* Grosse bordure gris foncé */
+    border-radius: 5px;           /* Coins un peu arrondis */
+    padding: 5px;                 /* Espace autour du texte */
+    font-size: 14px;              /* Texte assez gros */
+    font-weight: bold;
+}</string>
+            </property>
+            <property name="text">
+             <string>Un combat féroce commence !</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="1" column="1">
+             <widget class="QPushButton" name="btnAtk4">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: #FF6347;    /* Rouge Tomate */
+    border: 2px solid #8B0000;    /* Bordure Rouge Sang */
+    border-radius: 10px;          /* Bien arrondis */
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+QPushButton:hover {
+    background-color: #FF4500;    /* Plus clair quand on passe la souris */
+}
+QPushButton:pressed {
+    background-color: #500000;    /* Foncé quand on clique */
+}</string>
+              </property>
+              <property name="text">
+               <string>Morsure</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QPushButton" name="btnAtk1">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: #FF6347;    /* Rouge Tomate */
+    border: 2px solid #8B0000;    /* Bordure Rouge Sang */
+    border-radius: 10px;          /* Bien arrondis */
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+QPushButton:hover {
+    background-color: #FF4500;    /* Plus clair quand on passe la souris */
+}
+QPushButton:pressed {
+    background-color: #500000;    /* Foncé quand on clique */
+}</string>
+              </property>
+              <property name="text">
+               <string>Charge</string>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="btnAtk3">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: #FF6347;    /* Rouge Tomate */
+    border: 2px solid #8B0000;    /* Bordure Rouge Sang */
+    border-radius: 10px;          /* Bien arrondis */
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+QPushButton:hover {
+    background-color: #FF4500;    /* Plus clair quand on passe la souris */
+}
+QPushButton:pressed {
+    background-color: #500000;    /* Foncé quand on clique */
+}</string>
+              </property>
+              <property name="text">
+               <string>Rugissement</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QPushButton" name="btnAtk2">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+    background-color: #FF6347;    /* Rouge Tomate */
+    border: 2px solid #8B0000;    /* Bordure Rouge Sang */
+    border-radius: 10px;          /* Bien arrondis */
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+QPushButton:hover {
+    background-color: #FF4500;    /* Plus clair quand on passe la souris */
+}
+QPushButton:pressed {
+    background-color: #500000;    /* Foncé quand on clique */
+}</string>
+              </property>
+              <property name="text">
+               <string>Eclair</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnChange">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+    background-color: #4682B4; /* Bleu Acier */
+    border: 2px solid #000080;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #005C96;    /* Plus clair quand on passe la souris */
+}
+QPushButton:pressed {
+    background-color: #03224C;    /* Foncé quand on clique */
+}</string>
+            </property>
+            <property name="text">
+             <string>Changer de pokemon</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_equipe">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QLabel" name="labelTitre">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    background-color: white;
+    border: 4px solid #333333;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}</string>
+          </property>
+          <property name="text">
+           <string>Choisis ton combattant</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>111</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="QToolButton" name="btnPoke1">
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Bulbizarre</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ressources.qrc">
+              <normaloff>:/assets/bulbizarre_f.png</normaloff>:/assets/bulbizarre_f.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>100</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonStyle::ToolButtonTextUnderIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QToolButton" name="btnPoke2">
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonStyle::ToolButtonTextUnderIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QToolButton" name="btnPoke3">
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonStyle::ToolButtonTextUnderIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QToolButton" name="btnPoke4">
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonStyle::ToolButtonTextUnderIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QToolButton" name="btnPoke5">
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonStyle::ToolButtonTextUnderIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QToolButton" name="btnPoke6">
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonStyle::ToolButtonTextUnderIcon</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>110</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnRetour">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #FF4500; /* Rouge */
+    border: 3px solid #8B0000; /* Bordure foncée */
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+QPushButton:hover { background-color: #FF6347; }
+
+QPushButton:pressed {
+    background-color: #500000;    /* Foncé quand on clique */
+}</string>
+          </property>
+          <property name="text">
+           <string>Retour</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1440</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="ressources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

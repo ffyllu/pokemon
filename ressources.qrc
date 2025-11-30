@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/arene2.png</file>
+        <file>assets/bulbizarre_d.png</file>
+        <file>assets/bulbizarre_f.png</file>
+        <file>assets/carapuce_d.png</file>
+        <file>assets/carapuce_f.png</file>
+        <file>assets/salameche_d.png</file>
+        <file>assets/salameche_f.png</file>
+    </qresource>
+</RCC>
